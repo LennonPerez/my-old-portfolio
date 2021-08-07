@@ -1,0 +1,40 @@
+@import "header";
+@import "hero";
+@import "skills";
+@import "projects";
+@import "contact";
+@import "footer";
+@import "modal";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  background-color: #f0ecec;
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #f2f2f2;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #1c1a1a;
+    border-radius: 10px;
+    height: 5rem;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: gray;
+  }
+}

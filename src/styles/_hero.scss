@@ -1,0 +1,74 @@
+.hero {
+  height: 100vh;
+  background-image: url(../assets/programming-background1.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: white;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5rem;
+  @media (min-height: 1024px), (min-width: 1440px) {
+    height: calc(100vh - 11rem);
+  }
+  .main-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 1.5rem 0 0.5rem 0;
+    @media (min-height: 1024px) {
+      font-size: 2.8rem;
+      padding: 0 2rem;
+    }
+    @media (min-width: 1920px), (min-height: 1366px) {
+      font-size: 3.5rem;
+    }
+    span {
+      color: #a539df;
+    }
+  }
+  .social-media {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a {
+      font-size: 0;
+      i {
+        font-size: 2.5rem;
+        margin: 0.5rem;
+        color: white;
+        transition: color 0.3s ease;
+        &:hover {
+          color: #a539df;
+        }
+      }
+    }
+  }
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    height: 4rem;
+    width: 12rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    background-color: #582275;
+    color: #fff;
+    border: none;
+    margin: 1.5rem 0;
+    cursor: pointer;
+    transition: background 0.5s ease;
+    &:hover {
+      background-color: #a539df;
+    }
+    @media (min-height: 1024px) {
+      width: 14rem;
+      height: 4.5rem;
+      font-size: 1.3rem;
+    }
+  }
+}
