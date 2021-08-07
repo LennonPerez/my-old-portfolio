@@ -53,10 +53,42 @@
     @media (min-width: 768px) {
       display: flex;
       a {
-        color: #fff;
+        color: gray;
         font-size: 1.2rem;
         margin-right: 3rem;
         text-decoration: none;
+        position: relative;
+        transition: transform 0.3s ease, color 0.3s ease;
+        &::after {
+          content: "";
+          display: block;
+          width: 0%;
+          height: 3px;
+          background-color: #a539df;
+          position: absolute;
+          bottom: -0.5rem;
+          transition: width 0.3s ease;
+        }
+        &:hover {
+          // transform: translatey(-0.25rem);
+          color: #fff;
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+      .selected {
+        color: #fff;
+        &::after {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 3px;
+          background-color: #a539df;
+          position: absolute;
+          bottom: -0.5rem;
+          transition: width 0.3s ease;
+        }
       }
     }
   }

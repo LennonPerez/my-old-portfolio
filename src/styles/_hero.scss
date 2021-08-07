@@ -11,6 +11,7 @@
   justify-content: center;
   align-items: center;
   padding-top: 5rem;
+  position: relative;
   @media (min-height: 1024px), (min-width: 1440px) {
     height: calc(100vh - 11rem);
   }
@@ -70,5 +71,9 @@
       height: 4.5rem;
       font-size: 1.3rem;
     }
+  }
+  #skillshero {
+    position: absolute;
+    bottom: 5rem;
   }
 }

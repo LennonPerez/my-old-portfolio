@@ -14,12 +14,9 @@ const Hiddenmenu = ({ language, openMenu, setView }) => {
         </a>
       </li>
       <li>
-        <a href="#skills" onClick={closeMenu}>
+        <a href="#skillshero" onClick={closeMenu}>
           {language === "EN" ? "Skills" : "Habilidades"}
         </a>
-      </li>
-      <li>
-        <a href="#home">{language === "EN" ? "Resume" : "Curriculum"}</a>
       </li>
       <li>
         <a href="#projects" onClick={closeMenu}>
@@ -30,6 +27,9 @@ const Hiddenmenu = ({ language, openMenu, setView }) => {
         <a href="#contact" onClick={closeMenu}>
           {language === "EN" ? "Contact" : "Contacto"}
         </a>
+      </li>
+      <li>
+        <a href="#home">{language === "EN" ? "Resume" : "Curriculum"}</a>
       </li>
     </ul>
   );

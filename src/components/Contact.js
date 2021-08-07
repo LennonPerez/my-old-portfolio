@@ -68,12 +68,12 @@ const Contact = () => {
   return (
     <>
       <div className="contact-form" id="contact">
-        <h2>{language === "EN" ? "Contact" : "Contacto"}</h2>
+        <h2>{language === "EN" ? "Contact me" : "Contactame"}</h2>
         <div className="container">
           <p>
             {language === "EN"
-              ? " Reach me on social media, by filling out the contact form or by sending an email to"
-              : "Encuentrame en redes sociales, llenando el formulario de contacto, o al enviarme un correo a :"}
+              ? " Reach me on social media, by filling out the contact form or by sending an email to:"
+              : "Encuentrame en redes sociales, llenando el formulario de contacto, o al enviarme un correo a:"}
           </p>
           <span>lenonart14@gmail.com</span>
           <form className="form" onSubmit={sendMessage}>

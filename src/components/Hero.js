@@ -37,6 +37,7 @@ const Hero = () => {
       <a href="#projects" className="btn">
         {language === "EN" ? "See my work" : "Mira mi trabajo"}
       </a>
+      <div id="skillshero" />
     </div>
   );
 };

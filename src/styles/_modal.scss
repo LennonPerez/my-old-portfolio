@@ -18,6 +18,9 @@
   padding: 1.5rem;
   text-align: center;
   animation: modal-animation 0.4s ease forwards;
+  @media (min-width: 768px) {
+    width: 30%;
+  }
   h2 {
     font-size: 1.8rem;
     color: #582275;

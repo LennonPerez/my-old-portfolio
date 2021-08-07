@@ -9,6 +9,7 @@ const Header = () => {
   const [view, setView] = useState("Home");
   const menulogo = useRef();
 
+  //open and close hidden menu on mobile version
   const openMenu = () => {
     if (menulogo.current.classList[1] === "show") {
       menulogo.current.classList.add("hidde");
@@ -46,15 +47,25 @@ const Header = () => {
             : null}
         </span>
         <div className="links">
-          <a href="#home">{language === "EN" ? "Home" : "Inicio"}</a>
-
-          <a href="#skills">{language === "EN" ? "Skills" : "Habilidades"}</a>
-
-          <a href="#home">{language === "EN" ? "Resume" : "Curriculum"}</a>
-
-          <a href="#projects">{language === "EN" ? "Projects" : "Proyectos"}</a>
-
-          <a href="#contact">{language === "EN" ? "Contact" : "Contacto"}</a>
+          <a href="#home" id="home-link">
+            {language === "EN" ? "Home" : "Inicio"}
+          </a>
+          <a href="#skillshero" id="skills-link">
+            {language === "EN" ? "Skills" : "Habilidades"}
+          </a>
+          <a href="#projects" id="projects-link">
+            {language === "EN" ? "Projects" : "Proyectos"}
+          </a>
+          <a href="#contact" id="contact-link">
+            {language === "EN" ? "Contact" : "Contacto"}
+          </a>
+          <a
+            href="https://drive.google.com/file/d/1zlnBFhPv_hxC1EUViFq-Au9pJiFlTZe_/view?usp=sharing"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {language === "EN" ? "Resume" : "Curriculum"}
+          </a>
         </div>
         <p onClick={changeLanguage}>{language}</p>
       </header>
