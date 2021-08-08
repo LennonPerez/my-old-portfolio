@@ -33,7 +33,7 @@ function App() {
       entries.forEach((entry) => {
         const link = document.querySelector(`#${entry.target.id}-link`);
         if (entry.isIntersecting) {
-          link.classList.add("selected");
+          link.classList.toggle("selected");
           setSection(entry.target.id);
         } else {
           link.classList.remove("selected");

@@ -78,6 +78,7 @@
         position: relative;
         transition: transform 0.3s ease, color 0.3s ease;
         &::after {
+          opacity: 0;
           content: "";
           display: block;
           width: 0%;
@@ -91,6 +92,7 @@
           // transform: translatey(-0.25rem);
           color: #fff;
           &::after {
+            opacity: 1;
             width: 100%;
           }
         }
@@ -98,6 +100,7 @@
       .selected {
         color: #fff;
         &::after {
+          opacity: 1;
           content: "";
           display: block;
           width: 100%;
@@ -105,7 +108,7 @@
           background-color: #a539df;
           position: absolute;
           bottom: -0.5rem;
-          transition: width 0.3s ease;
+          transition: width 0.3s ease, opacity 0.3s ease;
         }
       }
     }

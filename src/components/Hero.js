@@ -1,8 +1,34 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { LanguageContext } from "../App";
 
 const Hero = () => {
   const language = useContext(LanguageContext);
+
+  useEffect(() => {
+    const title = document.querySelector(".main-title");
+    const social = document.querySelector(".social-media");
+    const btn = document.querySelector(".btn");
+
+    const options = {
+      root: null,
+      threshold: 0,
+      rootMargin: "-80px 0px 0px 0px",
+    };
+
+    const io2 = new IntersectionObserver((entries, io) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show-title");
+        } else {
+          entry.target.classList.remove("show-title");
+        }
+      });
+    }, options);
+
+    io2.observe(title);
+    io2.observe(social);
+    io2.observe(btn);
+  }, []);
 
   return (
     <div className="hero" id="home">

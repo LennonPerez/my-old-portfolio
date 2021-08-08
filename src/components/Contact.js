@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { LanguageContext } from "../App";
 import Modal from "./Modal";
 
@@ -65,11 +65,28 @@ const Contact = () => {
     inputError();
   };
 
+  useEffect(() => {
+    const form = document.querySelector(".container-form");
+    const options = {};
+
+    const io = new IntersectionObserver((entries, io) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          form.classList.add("show-form");
+        } else {
+          form.classList.remove("show-form");
+        }
+      });
+    }, options);
+
+    io.observe(form);
+  }, []);
+
   return (
     <>
       <div className="contact-form" id="contact">
         <h2>{language === "EN" ? "Contact me" : "Contactame"}</h2>
-        <div className="container">
+        <div className="container container-form">
           <p>
             {language === "EN"
               ? " Reach me on social media, by filling out the contact form or by sending an email to:"

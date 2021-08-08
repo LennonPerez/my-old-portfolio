@@ -1,8 +1,20 @@
+@keyframes form-animation {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.show-form {
+  animation: form-animation 0.8s ease forwards;
+}
 .contact-form {
   padding: 1.5rem;
   position: relative;
-  left: 50%;
-  transform: translate(-50%);
+  width: 100%;
+  margin: 0 auto;
   @media (min-width: 1100px) {
     padding: 1.5rem 15% 5rem 15%;
   }

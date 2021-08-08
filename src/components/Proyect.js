@@ -10,7 +10,7 @@ const Project = ({ project, language }) => {
       rootMargin: "0px 0px -10% 0px",
     };
 
-    const io2 = new IntersectionObserver((entries, io) => {
+    const io = new IntersectionObserver((entries, io) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.children[0].classList.add("show-img");
@@ -23,7 +23,7 @@ const Project = ({ project, language }) => {
     }, options);
 
     projects.forEach((projec) => {
-      io2.observe(projec);
+      io.observe(projec);
     });
   }, []);
 

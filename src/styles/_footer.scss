@@ -1,3 +1,30 @@
+@keyframes social-animation {
+  0% {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes name-animation {
+  0% {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.show-my-name {
+  animation: name-animation 0.8s ease forwards;
+}
+.show-social-footer {
+  animation: social-animation 0.8s ease forwards;
+}
 .footer {
   margin: 0 auto;
   width: 90%;
@@ -9,6 +36,7 @@
     width: 70%;
   }
   p {
+    opacity: 0;
     color: #582275;
     @media (min-width: 768px) {
       font-size: 1.2rem;
@@ -17,18 +45,22 @@
       font-size: 1.4rem;
     }
   }
-  a {
-    font-size: 0;
-    i {
-      font-size: 2.5rem;
-      margin: 0.25rem;
-      color: #582275;
-      transition: color 0.3s ease;
-      &:hover {
-        color: #a539df;
-      }
-      @media (min-height: 1024px), (min-width: 1440px) {
-        font-size: 3rem;
+  #social-footer {
+    opacity: 0;
+
+    a {
+      font-size: 0;
+      i {
+        font-size: 2.5rem;
+        margin: 0.25rem;
+        color: #582275;
+        transition: color 0.3s ease;
+        &:hover {
+          color: #a539df;
+        }
+        @media (min-height: 1024px), (min-width: 1440px) {
+          font-size: 3rem;
+        }
       }
     }
   }

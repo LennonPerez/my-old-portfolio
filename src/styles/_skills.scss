@@ -1,14 +1,19 @@
 @keyframes skills-animation {
+  0% {
+    transform: translateX(-40%);
+    opacity: 0;
+  }
   100% {
     transform: translateX(0);
     opacity: 1;
   }
 }
+.show-skills {
+  animation: skills-animation 0.8s ease forwards;
+}
 .skills-container {
-  padding: 1.5rem;
-  transform: translateX(-40%);
   opacity: 0;
-  animation: skills-animation 0.5s ease forwards;
+  padding: 1.5rem;
   @media (min-width: 768px) {
     padding-bottom: 0;
   }

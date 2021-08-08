@@ -1,8 +1,30 @@
+import { useEffect } from "react";
+
 const Footer = () => {
+  useEffect(() => {
+    const social = document.querySelector("#social-footer");
+    const name = document.querySelector("#my-name");
+    const options = {
+      threshold: 1,
+    };
+    const io = new IntersectionObserver((entries, io) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add(`show-${entry.target.id}`);
+        } else {
+          entry.target.classList.remove(`show-${entry.target.id}`);
+        }
+      });
+    }, options);
+
+    io.observe(social);
+    io.observe(name);
+  }, []);
+
   return (
     <footer className="footer">
-      <p>Lennon Perez</p>
-      <div className="social-media">
+      <p id="my-name">Lennon Perez</p>
+      <div className="social-media" id="social-footer">
         <a href="https://wa.me/584126736618" target="_blank" rel="noreferrer">
           <i className="fab fa-whatsapp-square"></i>
           whatsapp
