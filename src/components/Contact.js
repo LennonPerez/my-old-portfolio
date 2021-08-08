@@ -66,7 +66,7 @@ const Contact = () => {
   };
 
   useEffect(() => {
-    const form = document.querySelector(".container-form");
+    const form = document.querySelector(".contact-form");
     const options = {};
 
     const io = new IntersectionObserver((entries, io) => {
@@ -87,15 +87,22 @@ const Contact = () => {
       <div className="contact-form" id="contact">
         <h2>{language === "EN" ? "Contact me" : "Contactame"}</h2>
         <div className="container container-form">
+          <h3>
+            {language === "EN"
+              ? "Interested in working with me or perhaps just talk?"
+              : "¿Interesado en trabajar conmigo o quizas solo quieres hablar?"}
+          </h3>
           <p>
             {language === "EN"
-              ? " Reach me on social media, by filling out the contact form or by sending an email to:"
+              ? " Reach me on social media, by filling out the contact form down below or by sending an email to:"
               : "Encuentrame en redes sociales, llenando el formulario de contacto, o al enviarme un correo a:"}
           </p>
-          <span>lenonart14@gmail.com</span>
+          <a href="mailto:lenonart14@gmail.com" className="email">
+            lenonart14@gmail.com
+          </a>
           <form className="form" onSubmit={sendMessage}>
             <div className="input-box">
-              <label>
+              <label htmlFor="name-input">
                 {language === "EN"
                   ? "What's your name?"
                   : "¿Cual es tu nombre?"}
@@ -103,12 +110,19 @@ const Contact = () => {
               <input
                 type="text"
                 name="name"
+                id="name-input"
                 value={name}
                 onChange={readInputs}
+                onFocus={(e) =>
+                  e.target.previousElementSibling.classList.add("focused")
+                }
+                onBlur={(e) =>
+                  e.target.previousElementSibling.classList.remove("focused")
+                }
               />
             </div>
             <div className="input-box">
-              <label>
+              <label htmlFor="email-input">
                 {language === "EN"
                   ? "Your email address"
                   : "Tu correo electronico"}
@@ -116,26 +130,40 @@ const Contact = () => {
               <input
                 type="email"
                 name="email"
+                id="email-input"
                 value={email}
                 onChange={readInputs}
+                onFocus={(e) =>
+                  e.target.previousElementSibling.classList.add("focused")
+                }
+                onBlur={(e) =>
+                  e.target.previousElementSibling.classList.remove("focused")
+                }
               />
             </div>
             <div className="input-box">
-              <label>
+              <label htmlFor="input-message">
                 {language === "EN"
                   ? "Type your message here"
                   : "Escribe tu mensaje aqui"}
               </label>
               <textarea
                 name="message"
+                id="input-message"
                 value={message}
                 onChange={readInputs}
+                onFocus={(e) =>
+                  e.target.previousElementSibling.classList.add("focused")
+                }
+                onBlur={(e) =>
+                  e.target.previousElementSibling.classList.remove("focused")
+                }
               ></textarea>
             </div>
             {error && (
               <p className="formerror">
                 {language === "EN"
-                  ? "All the inputs must be filled"
+                  ? "All of the inputs must be filled out"
                   : "Todos los campos son obligatorios"}
               </p>
             )}

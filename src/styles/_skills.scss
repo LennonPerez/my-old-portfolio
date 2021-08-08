@@ -10,13 +10,35 @@
 }
 .show-skills {
   animation: skills-animation 0.8s ease forwards;
+  @media (max-width: 768px) {
+    animation: none;
+    .skill-box {
+      &:first-child {
+        animation: skills-animation 0.2s ease forwards;
+      }
+      &:nth-child(2) {
+        animation: skills-animation 0.2s ease forwards;
+      }
+      &:nth-child(3) {
+        animation: skills-animation 0.6s ease forwards;
+      }
+      &:nth-child(4) {
+        animation: skills-animation 0.6s ease forwards;
+      }
+      &:nth-child(5) {
+        animation: skills-animation 0.8s ease forwards;
+      }
+      &:nth-child(6) {
+        animation: skills-animation 0.8s ease forwards;
+      }
+      &:nth-child(7) {
+        animation: skills-animation 0.9s ease forwards;
+      }
+    }
+  }
 }
 .skills-container {
-  opacity: 0;
-  padding: 1.5rem;
-  @media (min-width: 768px) {
-    padding-bottom: 0;
-  }
+  padding: 1.5rem 1.5rem 0 1.5rem;
   @media (min-width: 1100px) {
     padding: 1.5rem 15% 0 15%;
   }

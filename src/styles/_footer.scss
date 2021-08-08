@@ -1,7 +1,7 @@
 @keyframes social-animation {
   0% {
     opacity: 0;
-    transform: translateX(2rem);
+    transform: translateX(10%);
   }
   100% {
     opacity: 1;
@@ -11,7 +11,7 @@
 @keyframes name-animation {
   0% {
     opacity: 0;
-    transform: translateX(-2rem);
+    transform: translateX(-10%);
   }
   100% {
     opacity: 1;
@@ -47,7 +47,6 @@
   }
   #social-footer {
     opacity: 0;
-
     a {
       font-size: 0;
       i {
