@@ -1,10 +1,11 @@
-import { useState, useRef, useContext } from "react";
+import { useState, useRef, useContext, useEffect } from "react";
 import Hiddenmenu from "./Hiddenmenu";
-import { LanguageContext, ChangeLanguageContext } from "../App";
+import { LanguageContext, ChangeLanguageContext, SectionContext } from "../App";
 
 const Header = () => {
   const language = useContext(LanguageContext);
   const changeLanguage = useContext(ChangeLanguageContext);
+  const section = useContext(SectionContext);
   const [open, setOpen] = useState(false);
   const [view, setView] = useState("Home");
   const menulogo = useRef();
@@ -21,29 +22,33 @@ const Header = () => {
     setOpen(open ? false : true);
   };
 
+  useEffect(() => {
+    setView(section);
+  }, [section]);
+
   return (
     <>
       <header className="header">
         <div className="hidden-logo" ref={menulogo} onClick={openMenu} />
         <span>
           {language === "EN"
-            ? view === "Home" || view === "Inicio"
-              ? "Home"
-              : view === "Skills" || view === "Habilidades"
-              ? "Skills"
-              : view === "Projects" || view === "Proyectos"
-              ? "Projects"
-              : view === "Contact" || view === "Contacto"
-              ? "Contact"
+            ? view === "home" || view === "inicio"
+              ? "home"
+              : view === "skills" || view === "habilidades"
+              ? "skills"
+              : view === "projects" || view === "proyectos"
+              ? "projects"
+              : view === "contact" || view === "contacto"
+              ? "contact"
               : null
-            : view === "Home" || view === "Inicio"
-            ? "Inicio"
-            : view === "Skills" || view === "Habilidades"
-            ? "Habilidades"
-            : view === "Projects" || view === "Proyectos"
-            ? "Proyectos"
-            : view === "Contact" || view === "Contacto"
-            ? "Contacto"
+            : view === "home" || view === "inicio"
+            ? "inicio"
+            : view === "skills" || view === "kabilidades"
+            ? "habilidades"
+            : view === "projects" || view === "proyectos"
+            ? "proyectos"
+            : view === "contact" || view === "contacto"
+            ? "contacto"
             : null}
         </span>
         <div className="links">

@@ -10,26 +10,26 @@ const Hiddenmenu = ({ language, openMenu, setView }) => {
     <ul className="hidden-menu">
       <li>
         <a href="#home" onClick={closeMenu}>
-          {language === "EN" ? "Home" : "Inicio"}
+          {language === "EN" ? "home" : "inicio"}
         </a>
       </li>
       <li>
         <a href="#skillshero" onClick={closeMenu}>
-          {language === "EN" ? "Skills" : "Habilidades"}
+          {language === "EN" ? "skills" : "habilidades"}
         </a>
       </li>
       <li>
         <a href="#projects" onClick={closeMenu}>
-          {language === "EN" ? "Projects" : "Proyectos"}
+          {language === "EN" ? "projects" : "proyectos"}
         </a>
       </li>
       <li>
         <a href="#contact" onClick={closeMenu}>
-          {language === "EN" ? "Contact" : "Contacto"}
+          {language === "EN" ? "contact" : "contacto"}
         </a>
       </li>
       <li>
-        <a href="#home">{language === "EN" ? "Resume" : "Curriculum"}</a>
+        <a href="#home">{language === "EN" ? "resume" : "curriculum"}</a>
       </li>
     </ul>
   );

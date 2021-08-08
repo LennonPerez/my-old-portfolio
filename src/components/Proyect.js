@@ -1,4 +1,32 @@
+import { useEffect } from "react";
+
 const Project = ({ project, language }) => {
+  useEffect(() => {
+    const projects = document.querySelectorAll(".project");
+
+    const options = {
+      root: null,
+      threshold: 0,
+      rootMargin: "0px 0px -10% 0px",
+    };
+
+    const io2 = new IntersectionObserver((entries, io) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.children[0].classList.add("show-img");
+          entry.target.children[1].classList.add("show-info");
+        } else {
+          entry.target.children[0].classList.remove("show-img");
+          entry.target.children[1].classList.remove("show-info");
+        }
+      });
+    }, options);
+
+    projects.forEach((projec) => {
+      io2.observe(projec);
+    });
+  }, []);
+
   return (
     <div className="project">
       <div className={`img ${project.class}`} />

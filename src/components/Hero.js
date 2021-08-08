@@ -29,7 +29,11 @@ const Hero = () => {
           <i className="fab fa-github-square"></i>
           github
         </a>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+        <a
+          href="https://m.me/lennon.perez.96/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <i className="fab fa-facebook-square"></i>
           facebook
         </a>

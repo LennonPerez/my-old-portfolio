@@ -9,9 +9,11 @@ import "./styles/app.css";
 
 export const LanguageContext = createContext();
 export const ChangeLanguageContext = createContext();
+export const SectionContext = createContext();
 
 function App() {
   const [language, setLanguage] = useState("EN");
+  const [section, setSection] = useState("home");
 
   const changeLanguage = () => setLanguage(language === "ES" ? "EN" : "ES");
 
@@ -32,6 +34,7 @@ function App() {
         const link = document.querySelector(`#${entry.target.id}-link`);
         if (entry.isIntersecting) {
           link.classList.add("selected");
+          setSection(entry.target.id);
         } else {
           link.classList.remove("selected");
         }
@@ -48,16 +51,18 @@ function App() {
   return (
     <LanguageContext.Provider value={language}>
       <ChangeLanguageContext.Provider value={changeLanguage}>
-        <div className="container">
-          <Header />
-          <main className="main-container">
-            <Hero />
-            <Skills />
-            <Projects />
-            <Contact />
-          </main>
-          <Footer />
-        </div>
+        <SectionContext.Provider value={section}>
+          <div className="container">
+            <Header />
+            <main className="main-container">
+              <Hero />
+              <Skills />
+              <Projects />
+              <Contact />
+            </main>
+            <Footer />
+          </div>
+        </SectionContext.Provider>
       </ChangeLanguageContext.Provider>
     </LanguageContext.Provider>
   );
