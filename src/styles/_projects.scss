@@ -1,4 +1,4 @@
-@keyframes title-animation {
+@keyframes title-projects-animation {
   0% {
     opacity: 0;
     transform: translateY(-150%);
@@ -14,8 +14,8 @@
   @media (min-width: 1100px) {
     padding: 6.5rem 15% 1.5rem 15%;
   }
-  .show-title {
-    animation: title-animation 0.8s ease forwards;
+  .show-title-projects {
+    animation: title-projects-animation 0.8s ease forwards;
   }
   h2 {
     font-size: 1.8rem;

@@ -126,6 +126,7 @@
     opacity: 0;
   }
   .header .links a {
+    text-transform: capitalize;
     color: gray;
     font-size: 1.2rem;
     margin-right: 3rem;
@@ -752,7 +753,20 @@
   background-image: url(../assets/icons8-redux.svg);
 }
 
-@keyframes title-animation {
+@-webkit-keyframes title-projects-animation {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-150%);
+            transform: translateY(-150%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes title-projects-animation {
   0% {
     opacity: 0;
     -webkit-transform: translateY(-150%);
@@ -776,9 +790,9 @@
   }
 }
 
-.projects-container .show-title {
-  -webkit-animation: title-animation 0.8s ease forwards;
-          animation: title-animation 0.8s ease forwards;
+.projects-container .show-title-projects {
+  -webkit-animation: title-projects-animation 0.8s ease forwards;
+          animation: title-projects-animation 0.8s ease forwards;
 }
 
 .projects-container h2 {
@@ -1133,7 +1147,8 @@
 
 @media (min-width: 1100px) {
   .contact-form {
-    padding: 1.5rem 15% 5rem 15%;
+    padding: 1.5rem 0 5rem 0;
+    width: 70%;
   }
 }
 
@@ -1157,7 +1172,7 @@
   }
 }
 
-.contact-form .container {
+.contact-form .container-form {
   padding: 1.5rem;
   width: 100%;
   background-color: white;
@@ -1165,25 +1180,26 @@
 }
 
 @media (min-width: 768px) {
-  .contact-form .container {
+  .contact-form .container-form {
     padding: 2rem;
   }
 }
 
-.contact-form .container h3 {
+.contact-form .container-form h3 {
   font-weight: 500;
   font-size: 1.3rem;
   color: #582275;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-@media (max-width: 768px) {
-  .contact-form .container h3 {
-    display: none;
+@media (min-width: 1440px), (min-height: 1024px) {
+  .contact-form .container-form h3 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
   }
 }
 
-.contact-form .container p {
+.contact-form .container-form p {
   color: gray;
   font-size: 1.2rem;
   letter-spacing: 0.5px;
@@ -1191,18 +1207,18 @@
 }
 
 @media (min-width: 768px) {
-  .contact-form .container p {
+  .contact-form .container-form p {
     font-size: 1.2rem;
   }
 }
 
 @media (min-height: 1024px), (min-width: 1440px) {
-  .contact-form .container p {
+  .contact-form .container-form p {
     font-size: 1.4rem;
   }
 }
 
-.contact-form .container .email {
+.contact-form .container-form .email {
   cursor: pointer;
   color: #582275;
   font-weight: 500;
@@ -1213,7 +1229,7 @@
   transition: color 0.3s ease;
 }
 
-.contact-form .container .email::after {
+.contact-form .container-form .email::after {
   content: "";
   position: absolute;
   bottom: -0.25rem;
@@ -1225,46 +1241,46 @@
   transition: width 0.3s ease;
 }
 
-.contact-form .container .email:hover {
+.contact-form .container-form .email:hover {
   color: #a539df;
 }
 
-.contact-form .container .email:hover::after {
+.contact-form .container-form .email:hover::after {
   width: 100%;
 }
 
 @media (min-height: 1024px), (min-width: 1440px) {
-  .contact-form .container .email {
+  .contact-form .container-form .email {
     font-size: 1.4rem;
   }
 }
 
-.contact-form .container .form {
+.contact-form .container-form .form {
   margin-top: 1.5rem;
 }
 
-.contact-form .container .form .input-box {
+.contact-form .container-form .form .input-box {
   width: 100%;
 }
 
-.contact-form .container .form .input-box label {
+.contact-form .container-form .form .input-box label {
   font-size: 1.2rem;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
 }
 
 @media (min-height: 1024px), (min-width: 1440px) {
-  .contact-form .container .form .input-box label {
+  .contact-form .container-form .form .input-box label {
     font-size: 1.4rem;
   }
 }
 
-.contact-form .container .form .input-box .focused {
+.contact-form .container-form .form .input-box .focused {
   color: #a539df !important;
   position: relative;
 }
 
-.contact-form .container .form .input-box input {
+.contact-form .container-form .form .input-box input {
   outline: none;
   width: 100%;
   margin: 1rem 0;
@@ -1275,54 +1291,54 @@
   border-radius: 7.5px;
 }
 
-.contact-form .container .form .input-box input:focus {
+.contact-form .container-form .form .input-box input:focus {
   border: 2px solid #a539df;
 }
 
 @media (min-height: 1024px), (min-width: 1440px) {
-  .contact-form .container .form .input-box input {
+  .contact-form .container-form .form .input-box input {
     font-size: 1.4rem;
   }
 }
 
-.contact-form .container .form .input-box textarea {
+.contact-form .container-form .form .input-box textarea {
   outline: none;
   border-radius: 7.5px;
   margin: 1rem 0 0 0;
-  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
   height: 10rem;
   border: 1px solid gray;
   font-size: 1.12rem;
-  font-family: "Roboto", sans-serif;
   padding: 1rem 1.5rem;
 }
 
-.contact-form .container .form .input-box textarea:focus {
+.contact-form .container-form .form .input-box textarea:focus {
   border: 2px solid #a539df;
 }
 
 @media (min-height: 1024px), (min-width: 1440px) {
-  .contact-form .container .form .input-box textarea {
+  .contact-form .container-form .form .input-box textarea {
     font-size: 1.4rem;
   }
 }
 
-.contact-form .container .form .input-box .error {
+.contact-form .container-form .form .input-box .error {
   border: 2px solid red;
 }
 
-.contact-form .container .form .input-box .labelerror {
+.contact-form .container-form .form .input-box .labelerror {
   color: red;
   font-weight: 600;
 }
 
-.contact-form .container .form .formerror {
+.contact-form .container-form .form .formerror {
   color: red;
   font-weight: 600;
   margin: 1rem 0 0 0;
 }
 
-.contact-form .container .form button {
+.contact-form .container-form .form button {
   width: 100%;
   height: 3rem;
   font-size: 1rem;
@@ -1337,18 +1353,18 @@
   cursor: pointer;
 }
 
-.contact-form .container .form button:hover {
+.contact-form .container-form .form button:hover {
   background-color: #a539df;
 }
 
 @media (min-width: 768px) {
-  .contact-form .container .form button {
+  .contact-form .container-form .form button {
     margin-top: 2rem;
   }
 }
 
 @media (min-height: 1024px), (min-width: 1440px) {
-  .contact-form .container .form button {
+  .contact-form .container-form .form button {
     font-size: 1.4rem;
     height: 4rem;
   }
@@ -1507,8 +1523,8 @@
   border-radius: 7.5px;
   padding: 1.5rem;
   text-align: center;
-  -webkit-animation: modal-animation 0.4s ease forwards;
-          animation: modal-animation 0.4s ease forwards;
+  -webkit-animation: modal-animation 0.6s ease forwards;
+          animation: modal-animation 0.6s ease forwards;
 }
 
 @media (min-width: 768px) {
@@ -1565,6 +1581,7 @@
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 html {
@@ -1574,7 +1591,6 @@ html {
 body {
   height: 100vh;
   width: 100%;
-  font-family: "Roboto", sans-serif;
   background-color: #f0ecec;
 }
 

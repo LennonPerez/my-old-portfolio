@@ -1,8 +1,10 @@
 import { useContext, useEffect } from "react";
+import Info from "../data.json";
 import { LanguageContext } from "../App";
 
 const Hero = () => {
   const language = useContext(LanguageContext);
+  const info = Info.hero[language];
 
   useEffect(() => {
     const title = document.querySelector(".main-title");
@@ -33,39 +35,36 @@ const Hero = () => {
   return (
     <div className="hero" id="home">
       <h1 className="main-title">
-        {language === "EN" ? "Hi, I'm" : "Hola, soy"} <span>Lennon</span>,{" "}
-        {language === "EN"
-          ? "a front-end developer."
-          : "un desarrollador front-end"}
+        {info.title.part1} <span>Lennon</span>, {info.title.part2}
       </h1>
       <div className="social-media">
         <a href="https://wa.me/584126736618" target="_blank" rel="noreferrer">
-          <i className="fab fa-whatsapp-square"></i>
-          whatsapp
+          <i className="fab fa-whatsapp-square"></i>1
         </a>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
-          <i className="fab fa-linkedin"></i>
-          linkedin
+        <a
+          href="https://www.linkedin.com/in/lennonperez/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <i className="fab fa-linkedin"></i>2
         </a>
         <a
           href="https://github.com/LennonPerez"
           target="_blank"
           rel="noreferrer"
         >
-          <i className="fab fa-github-square"></i>
-          github
+          <i className="fab fa-github-square"></i>3
         </a>
         <a
           href="https://m.me/lennon.perez.96/"
           target="_blank"
           rel="noreferrer"
         >
-          <i className="fab fa-facebook-square"></i>
-          facebook
+          <i className="fab fa-facebook-square"></i>4
         </a>
       </div>
       <a href="#projects" className="btn">
-        {language === "EN" ? "See my work" : "Mira mi trabajo"}
+        {info.button}
       </a>
       <div id="skillshero" />
     </div>

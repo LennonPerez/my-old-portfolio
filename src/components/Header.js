@@ -1,5 +1,6 @@
 import { useState, useRef, useContext, useEffect } from "react";
 import Hiddenmenu from "./Hiddenmenu";
+import Info from "../data.json";
 import { LanguageContext, ChangeLanguageContext, SectionContext } from "../App";
 
 const Header = () => {
@@ -7,14 +8,15 @@ const Header = () => {
   const changeLanguage = useContext(ChangeLanguageContext);
   const section = useContext(SectionContext);
   const [open, setOpen] = useState(false);
-  const [view, setView] = useState("Home");
+  const [view, setView] = useState("home");
   const menulogo = useRef();
+
+  const info = Info.header[language];
 
   //open and close hidden menu on mobile version
   const openMenu = () => {
     if (menulogo.current.classList[1] === "show") {
-      menulogo.current.classList.add("hidde");
-      menulogo.current.classList.remove("show");
+      menulogo.current.classList.replace("show", "hidde");
     } else {
       menulogo.current.classList.add("show");
       menulogo.current.classList.remove("hidde");
@@ -24,59 +26,37 @@ const Header = () => {
 
   useEffect(() => {
     setView(section);
-  }, [section]);
+  }, [section, language]);
 
   return (
     <>
       <header className="header">
         <div className="hidden-logo" ref={menulogo} onClick={openMenu} />
-        <span>
-          {language === "EN"
-            ? view === "home" || view === "inicio"
-              ? "home"
-              : view === "skills" || view === "habilidades"
-              ? "skills"
-              : view === "projects" || view === "proyectos"
-              ? "projects"
-              : view === "contact" || view === "contacto"
-              ? "contact"
-              : null
-            : view === "home" || view === "inicio"
-            ? "inicio"
-            : view === "skills" || view === "kabilidades"
-            ? "habilidades"
-            : view === "projects" || view === "proyectos"
-            ? "proyectos"
-            : view === "contact" || view === "contacto"
-            ? "contacto"
-            : null}
-        </span>
+        <span>{info[view]}</span>
         <div className="links">
           <a href="#home" id="home-link">
-            {language === "EN" ? "Home" : "Inicio"}
+            {info.home}
           </a>
           <a href="#skillshero" id="skills-link">
-            {language === "EN" ? "Skills" : "Habilidades"}
+            {info.skills}
           </a>
           <a href="#projects" id="projects-link">
-            {language === "EN" ? "Projects" : "Proyectos"}
+            {info.projects}
           </a>
           <a href="#contact" id="contact-link">
-            {language === "EN" ? "Contact" : "Contacto"}
+            {info.contact}
           </a>
           <a
-            href="https://drive.google.com/file/d/1XdSltr6hLuBuGP0tEXxv_haqb-1lDev-/view?usp=sharing"
+            href="https://drive.google.com/file/d/1DNJO_YdmFH2ciB8rg0_34e1ty7G7fUeO/view"
             target="_blank"
             rel="noreferrer"
           >
-            {language === "EN" ? "Resume" : "Curriculum"}
+            {info.resume}
           </a>
         </div>
         <p onClick={changeLanguage}>{language}</p>
       </header>
-      {open && (
-        <Hiddenmenu language={language} openMenu={openMenu} setView={setView} />
-      )}
+      {open && <Hiddenmenu info={info} openMenu={openMenu} setView={setView} />}
     </>
   );
 };

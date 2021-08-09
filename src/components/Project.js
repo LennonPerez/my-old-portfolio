@@ -32,9 +32,7 @@ const Project = ({ project, language }) => {
       <div className={`img ${project.class}`} />
       <div className="info">
         <h3 className="name">{project.title}</h3>
-        <p className="description">
-          {language === "EN" ? project.descriptionEN : project.descriptionES}
-        </p>
+        <p className="description">{project[language]}</p>
         <div className="buttons">
           <a
             href={project.demo}

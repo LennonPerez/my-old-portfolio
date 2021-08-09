@@ -1,8 +1,10 @@
 import { useContext, useEffect } from "react";
+import Info from "../data.json";
 import { LanguageContext } from "../App";
 
 const Skills = () => {
-  const languages = useContext(LanguageContext);
+  const language = useContext(LanguageContext);
+  const info = Info.skills[language];
 
   useEffect(() => {
     const skills = document.querySelector(".skills-container");
@@ -28,7 +30,7 @@ const Skills = () => {
 
   return (
     <div className="skills-container" id="skills">
-      <h2>{languages === "EN" ? "My skills" : "Mis habilidades"}</h2>
+      <h2>{info.title}</h2>
       <ul>
         <li className="skill-box">
           <span className="logo html" />

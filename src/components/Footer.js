@@ -29,7 +29,11 @@ const Footer = () => {
           <i className="fab fa-whatsapp-square"></i>
           whatsapp
         </a>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+        <a
+          href="https://www.linkedin.com/in/lennonperez/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <i className="fab fa-linkedin"></i>
           linkedin
         </a>

@@ -1,4 +1,5 @@
 import { useContext, useState, useEffect } from "react";
+import Info from "../data.json";
 import { LanguageContext } from "../App";
 import Modal from "./Modal";
 
@@ -13,6 +14,7 @@ const Contact = () => {
   });
 
   const { name, email, message } = contactmessage;
+  const info = Info.contact[language];
 
   const readInputs = (e) => {
     setContactMessage({
@@ -56,7 +58,6 @@ const Contact = () => {
         email: "",
         message: "",
       });
-      console.log("exito");
       setOpenModal(true);
       setError(false);
     } else {
@@ -85,28 +86,16 @@ const Contact = () => {
   return (
     <>
       <div className="contact-form" id="contact">
-        <h2>{language === "EN" ? "Contact me" : "Contactame"}</h2>
-        <div className="container container-form">
-          <h3>
-            {language === "EN"
-              ? "Interested in working with me or perhaps just talk?"
-              : "¿Interesado en trabajar conmigo o quizas solo quieres hablar?"}
-          </h3>
-          <p>
-            {language === "EN"
-              ? " Reach me on social media, by filling out the contact form down below or by sending an email to:"
-              : "Encuentrame en redes sociales, llenando el formulario de contacto, o al enviarme un correo a:"}
-          </p>
+        <h2>{info.title}</h2>
+        <div className="container-form">
+          <h3>{info.question}</h3>
+          <p>{info.description}</p>
           <a href="mailto:lenonart14@gmail.com" className="email">
             lenonart14@gmail.com
           </a>
           <form className="form" onSubmit={sendMessage}>
             <div className="input-box">
-              <label htmlFor="name-input">
-                {language === "EN"
-                  ? "What's your name?"
-                  : "¿Cual es tu nombre?"}
-              </label>
+              <label htmlFor="name-input">{info.name}</label>
               <input
                 type="text"
                 name="name"
@@ -122,11 +111,7 @@ const Contact = () => {
               />
             </div>
             <div className="input-box">
-              <label htmlFor="email-input">
-                {language === "EN"
-                  ? "Your email address"
-                  : "Tu correo electronico"}
-              </label>
+              <label htmlFor="email-input">{info.email}</label>
               <input
                 type="email"
                 name="email"
@@ -142,11 +127,7 @@ const Contact = () => {
               />
             </div>
             <div className="input-box">
-              <label htmlFor="input-message">
-                {language === "EN"
-                  ? "Type your message here"
-                  : "Escribe tu mensaje aqui"}
-              </label>
+              <label htmlFor="input-message">{info.message}</label>
               <textarea
                 name="message"
                 id="input-message"
@@ -160,16 +141,8 @@ const Contact = () => {
                 }
               ></textarea>
             </div>
-            {error && (
-              <p className="formerror">
-                {language === "EN"
-                  ? "All of the inputs must be filled out"
-                  : "Todos los campos son obligatorios"}
-              </p>
-            )}
-            <button type="submit">
-              {language === "EN" ? "Send message" : "Enviar mensaje"}
-            </button>
+            {error && <p className="formerror">{info.error}</p>}
+            <button type="submit">{info.button}</button>
           </form>
         </div>
       </div>
