@@ -111,7 +111,7 @@
       "name" : "¿Cual es tu nombre?",
       "email" : "Tu correo electronico",
       "message" : "Escribe tu mensaje aqui",
-      "error" : "Todos los campos son obligatorio",
+      "error" : "Todos los campos son obligatorios",
       "button" : "Enviar mensaje"
     }
   },
