@@ -54,9 +54,9 @@
       "repo": "https://github.com/LennonPerez/InvoicesManager",
       "demo": "https://invoicesmanager.netlify.app/",
       "EN":
-        "This is a web where you can manage invoices, you can create, edit and eliminate an invoice by using a form. the invoices are keep on a external API. It was built using SASS, React and Redux",
+        "This is a web where you can manage invoices, you can create, edit and eliminate an invoice by using a form. It was built using SASS, React, Redux and Strapi for the REST API where the invoices are keep.",
       "ES":
-        "Esta es una web dode puedes administrar facturas, puedes crear, editar, y eliminar una factura usando un formulario, las facturas son guardadas en una API externa. Fue hecha usando SASS, React y Redux"
+        "Esta es una web dode puedes administrar facturas, puedes crear, editar, y eliminar una factura usando un formulario, fue hecha usando SASS, React, Redux y Strapi para la REST Api donde se guardan las facturas."
     },
     {
       "id": 2,
