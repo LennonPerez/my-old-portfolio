@@ -5,14 +5,16 @@
     "skills" : "skills",
     "projects" : "projects",
     "contact" : "contact",
-    "resume" : "resume" 
+    "resume" : "resume",
+    "resumelink" : "https://drive.google.com/file/d/1dQ4RkB6atUgfS2D6ENzbkOzmb4qx6Ut7/view?usp=sharing" 
   },
   "ES" : {
     "home" : "inicio",
     "skills" : "habilidades",
     "projects" : "proyectos",
     "contact" : "contacto",
-    "resume" : "curriculum" 
+    "resume" : "curriculum",
+    "resumelink" : "https://drive.google.com/file/d/1TORR_OHpt0k8OzYKETdZ2w1HMezJxYwI/view?usp=sharing" 
   }
   },
   "hero" : {
