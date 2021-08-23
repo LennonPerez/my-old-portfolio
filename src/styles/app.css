@@ -565,7 +565,7 @@
   bottom: 5rem;
 }
 
-@-webkit-keyframes skills-animation {
+@-webkit-keyframes skills-animation-mobile {
   0% {
     -webkit-transform: translateX(-40%);
             transform: translateX(-40%);
@@ -578,10 +578,36 @@
   }
 }
 
-@keyframes skills-animation {
+@keyframes skills-animation-mobile {
   0% {
     -webkit-transform: translateX(-40%);
             transform: translateX(-40%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes skills-animation-desktop {
+  0% {
+    -webkit-transform: translateX(-140%);
+            transform: translateX(-140%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes skills-animation-desktop {
+  0% {
+    -webkit-transform: translateX(-140%);
+            transform: translateX(-140%);
     opacity: 0;
   }
   100% {
@@ -592,42 +618,14 @@
 }
 
 .show-skills {
-  -webkit-animation: skills-animation 0.8s ease forwards;
-          animation: skills-animation 0.8s ease forwards;
+  -webkit-animation: skills-animation-mobile 0.8s ease forwards;
+          animation: skills-animation-mobile 0.8s ease forwards;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .show-skills {
-    -webkit-animation: none;
-            animation: none;
-  }
-  .show-skills .skill-box:first-child {
-    -webkit-animation: skills-animation 0.2s ease forwards;
-            animation: skills-animation 0.2s ease forwards;
-  }
-  .show-skills .skill-box:nth-child(2) {
-    -webkit-animation: skills-animation 0.2s ease forwards;
-            animation: skills-animation 0.2s ease forwards;
-  }
-  .show-skills .skill-box:nth-child(3) {
-    -webkit-animation: skills-animation 0.6s ease forwards;
-            animation: skills-animation 0.6s ease forwards;
-  }
-  .show-skills .skill-box:nth-child(4) {
-    -webkit-animation: skills-animation 0.6s ease forwards;
-            animation: skills-animation 0.6s ease forwards;
-  }
-  .show-skills .skill-box:nth-child(5) {
-    -webkit-animation: skills-animation 0.8s ease forwards;
-            animation: skills-animation 0.8s ease forwards;
-  }
-  .show-skills .skill-box:nth-child(6) {
-    -webkit-animation: skills-animation 0.8s ease forwards;
-            animation: skills-animation 0.8s ease forwards;
-  }
-  .show-skills .skill-box:nth-child(7) {
-    -webkit-animation: skills-animation 0.9s ease forwards;
-            animation: skills-animation 0.9s ease forwards;
+    -webkit-animation: skills-animation-desktop 0.8s ease forwards;
+            animation: skills-animation-desktop 0.8s ease forwards;
   }
 }
 
@@ -659,7 +657,6 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    background-color: white;
     border-radius: 7.5px;
   }
 }
@@ -676,6 +673,7 @@
           justify-content: center;
   height: 5rem;
   width: 100%;
+  opacity: 0;
   list-style: none;
   background-color: white;
   color: gray;
@@ -745,12 +743,24 @@
   background-size: 50px;
 }
 
+.skills-container ul .skill-box .ts {
+  background-image: url(../assets//icons8-typescript.svg);
+}
+
 .skills-container ul .skill-box .react {
   background-image: url(../assets/icons8-react-native.svg);
 }
 
 .skills-container ul .skill-box .redux {
   background-image: url(../assets/icons8-redux.svg);
+}
+
+.skills-container ul .skill-box .next {
+  background-image: url(../assets/next-js-seeklogo.com.svg);
+}
+
+.skills-container ul .skill-box .vue {
+  background-image: url(../assets//icons8-vue-js.svg);
 }
 
 @-webkit-keyframes title-projects-animation {
@@ -901,7 +911,7 @@
   .projects-container .project:nth-child(3) .show-info .description, .projects-container .project:nth-child(5) .show-info .description {
     text-align: end;
   }
-  .projects-container .project:nth-child(5) {
+  .projects-container .project:nth-child(6) {
     margin-bottom: 0;
   }
 }
@@ -979,6 +989,16 @@
 @media (min-width: 500px) {
   .projects-container .project .game {
     background-image: url(../assets/game-desktop.PNG);
+  }
+}
+
+.projects-container .project .employees {
+  background-image: url(../assets/employeesmanager-mobile.png);
+}
+
+@media (min-width: 500px) {
+  .projects-container .project .employees {
+    background-image: url(../assets/employeesmanager-desktop.png);
   }
 }
 

@@ -7,7 +7,7 @@ const Skills = () => {
   const info = Info.skills[language];
 
   useEffect(() => {
-    const skills = document.querySelector(".skills-container");
+    const skills = document.querySelectorAll(".skill-box");
 
     const options = {
       root: null,
@@ -18,14 +18,16 @@ const Skills = () => {
     const io2 = new IntersectionObserver((entries, io) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          skills.classList.add("show-skills");
+          entry.target.classList.add("show-skills");
         } else {
-          skills.classList.remove("show-skills");
+          entry.target.classList.remove("show-skills");
         }
       });
     }, options);
 
-    io2.observe(skills);
+    skills.forEach((skill) => {
+      io2.observe(skill);
+    });
   }, []);
 
   return (
@@ -53,12 +55,24 @@ const Skills = () => {
           <h3>jQuery</h3>
         </li>
         <li className="skill-box">
+          <span className="logo ts" />
+          <h3>TypeScript</h3>
+        </li>
+        <li className="skill-box">
           <span className="logo react" />
           <h3>React</h3>
         </li>
         <li className="skill-box">
           <span className="logo redux" />
           <h3>Redux</h3>
+        </li>
+        <li className="skill-box">
+          <span className="logo next" />
+          <h3>Next</h3>
+        </li>
+        <li className="skill-box">
+          <span className="logo vue" />
+          <h3>Vue</h3>
         </li>
       </ul>
     </div>

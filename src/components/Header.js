@@ -47,7 +47,7 @@ const Header = () => {
             {info.contact}
           </a>
           <a
-            href="https://drive.google.com/file/d/1DNJO_YdmFH2ciB8rg0_34e1ty7G7fUeO/view"
+            href="https://drive.google.com/file/d/1-1Qbws8FcW6Lny7JyinPPcWnkBZ7U50r/view?usp=sharing"
             target="_blank"
             rel="noreferrer"
           >
