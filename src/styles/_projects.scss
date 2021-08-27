@@ -1,6 +1,5 @@
 @keyframes title-projects-animation {
   0% {
-    opacity: 0;
     transform: translateY(-150%);
   }
   100% {
@@ -18,6 +17,7 @@
     animation: title-projects-animation 0.8s ease forwards;
   }
   h2 {
+    opacity: 0;
     font-size: 1.8rem;
     text-align: center;
     color: #582275;

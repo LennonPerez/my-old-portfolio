@@ -78,9 +78,9 @@
       "repo": "https://github.com/LennonPerez/vuex-classic-crud",
       "demo": "https://employeesmanager.netlify.app/#/",
       "EN":
-        "This is a web where you can manage employees, you can create, edit and delete employees, it designed by myself and it was built using Vue JS, Vuex, SASS and Firebase.",
+        "This is a web where you can manage employees, you can create, edit and delete employees, it was designed by myself and it was built using Vue JS, Vuex, TypeScript, SASS and Firebase.",
       "ES":
-        "Esta es una web donde puedes administrar empleados, puedes crear, editar o o eliminar empledos, fue diseñada por mi mismo y fue hecha usando Vue JS. Vuex, SASS y Firebase"
+        "Esta es una web donde puedes administrar empleados, puedes crear, editar o o eliminar empledos, fue diseñada por mi mismo y fue hecha usando Vue JS. Vuex, TypeScript, SASS y Firebase"
     },
     {
       "id": 4,

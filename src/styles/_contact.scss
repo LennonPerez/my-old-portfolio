@@ -95,6 +95,16 @@
     }
     .form {
       margin-top: 1.5rem;
+      .name-address-box {
+        @media (min-width: 768px) {
+          display: flex;
+          justify-content: space-between;
+          margin: 3rem 0 1.5rem 0;
+          .input-box {
+            width: calc(50% - 1rem);
+          }
+        }
+      }
       .input-box {
         width: 100%;
         label {

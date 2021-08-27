@@ -630,12 +630,14 @@
 }
 
 .skills-container {
-  padding: 1.5rem 1.5rem 0 1.5rem;
+  padding-top: 1.5rem;
+  width: calc(100% - 3rem);
+  margin: 0 auto;
 }
 
 @media (min-width: 1100px) {
   .skills-container {
-    padding: 1.5rem 15% 0 15%;
+    width: 70%;
   }
 }
 
@@ -657,7 +659,6 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    border-radius: 7.5px;
   }
 }
 
@@ -683,14 +684,19 @@
 
 @media (min-width: 768px) {
   .skills-container ul .skill-box {
-    width: 15%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    border-radius: none;
     height: 8rem;
     margin-top: 0;
+    border-radius: 0;
+  }
+  .skills-container ul .skill-box:first-child {
+    border-radius: 7.5px 0 0 7.5px;
+  }
+  .skills-container ul .skill-box:last-child {
+    border-radius: 0 7.5px 7.5px 0;
   }
 }
 
@@ -731,7 +737,7 @@
 }
 
 .skills-container ul .skill-box .sass {
-  background-image: url(../assets/icons8-sass-48.png);
+  background-image: url(../assets/icons8-sass-avatar.svg);
 }
 
 .skills-container ul .skill-box .js {
@@ -739,7 +745,7 @@
 }
 
 .skills-container ul .skill-box .jquery {
-  background-image: url(../assets/icons8-jquery-48.png);
+  background-image: url(../assets/icons8-jquery.svg);
   background-size: 50px;
 }
 
@@ -765,7 +771,6 @@
 
 @-webkit-keyframes title-projects-animation {
   0% {
-    opacity: 0;
     -webkit-transform: translateY(-150%);
             transform: translateY(-150%);
   }
@@ -778,7 +783,6 @@
 
 @keyframes title-projects-animation {
   0% {
-    opacity: 0;
     -webkit-transform: translateY(-150%);
             transform: translateY(-150%);
   }
@@ -806,6 +810,7 @@
 }
 
 .projects-container h2 {
+  opacity: 0;
   font-size: 1.8rem;
   text-align: center;
   color: #582275;
@@ -1279,6 +1284,21 @@
   margin-top: 1.5rem;
 }
 
+@media (min-width: 768px) {
+  .contact-form .container-form .form .name-address-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 3rem 0 1.5rem 0;
+  }
+  .contact-form .container-form .form .name-address-box .input-box {
+    width: calc(50% - 1rem);
+  }
+}
+
 .contact-form .container-form .form .input-box {
   width: 100%;
 }
@@ -1619,12 +1639,12 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: #f2f2f2;
+  background: black;
 }
 
 body::-webkit-scrollbar-thumb {
-  background: #1c1a1a;
-  border-radius: 10px;
+  background: #a539df;
+  border-radius: 25px;
   height: 5rem;
 }
 

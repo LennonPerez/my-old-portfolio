@@ -94,37 +94,39 @@ const Contact = () => {
             lenonart14@gmail.com
           </a>
           <form className="form" onSubmit={sendMessage}>
-            <div className="input-box">
-              <label htmlFor="name-input">{info.name}</label>
-              <input
-                type="text"
-                name="name"
-                id="name-input"
-                value={name}
-                onChange={readInputs}
-                onFocus={(e) =>
-                  e.target.previousElementSibling.classList.add("focused")
-                }
-                onBlur={(e) =>
-                  e.target.previousElementSibling.classList.remove("focused")
-                }
-              />
-            </div>
-            <div className="input-box">
-              <label htmlFor="email-input">{info.email}</label>
-              <input
-                type="email"
-                name="email"
-                id="email-input"
-                value={email}
-                onChange={readInputs}
-                onFocus={(e) =>
-                  e.target.previousElementSibling.classList.add("focused")
-                }
-                onBlur={(e) =>
-                  e.target.previousElementSibling.classList.remove("focused")
-                }
-              />
+            <div className="name-address-box">
+              <div className="input-box">
+                <label htmlFor="name-input">{info.name}</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name-input"
+                  value={name}
+                  onChange={readInputs}
+                  onFocus={(e) =>
+                    e.target.previousElementSibling.classList.add("focused")
+                  }
+                  onBlur={(e) =>
+                    e.target.previousElementSibling.classList.remove("focused")
+                  }
+                />
+              </div>
+              <div className="input-box">
+                <label htmlFor="email-input">{info.email}</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email-input"
+                  value={email}
+                  onChange={readInputs}
+                  onFocus={(e) =>
+                    e.target.previousElementSibling.classList.add("focused")
+                  }
+                  onBlur={(e) =>
+                    e.target.previousElementSibling.classList.remove("focused")
+                  }
+                />
+              </div>
             </div>
             <div className="input-box">
               <label htmlFor="input-message">{info.message}</label>
